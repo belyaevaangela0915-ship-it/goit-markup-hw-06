@@ -52,8 +52,9 @@ img {
     overflow: hidden;
 }
 
-/* ==================== CONTAINER (mobile-first base) ==================== */
+/* ==================== CONTAINER ==================== */
 
+/* Mobile base */
 .container {
     max-width: 320px;
     padding-inline: 16px;
@@ -62,6 +63,7 @@ img {
 
 /* ==================== SECTION ==================== */
 
+/* Mobile base */
 .section {
     padding: 96px 0;
 }
@@ -82,6 +84,7 @@ img {
     align-items: center;
 }
 
+/* Mobile: compact padding */
 .header-container-link {
     display: inline-block;
     padding-block: 16px;
@@ -95,10 +98,10 @@ img {
     gap: 0;
 }
 
-/* Desktop nav — hidden on mobile */
+/* Desktop nav hidden on mobile */
 .nav-ul { display: none; }
 
-/* Desktop contacts — hidden on mobile */
+/* Desktop contacts hidden on mobile */
 .contact { display: none; }
 
 /* ==================== BURGER BUTTON ==================== */
@@ -124,6 +127,7 @@ img {
 
 /* ==================== MOBILE MENU ==================== */
 
+/* Overlay — hidden by default */
 .mobile-menu {
     display: none;
     position: fixed;
@@ -133,22 +137,32 @@ img {
     height: 100%;
     background-color: #fff;
     z-index: 9998;
-    padding: 72px 16px 40px;
-    flex-direction: column;
-    justify-content: space-between;
     overflow-y: auto;
 }
 
 .mobile-menu.is-open {
-    display: flex;
+    display: block;
 }
 
-/* Force-hide on tablet and desktop regardless of .is-open */
+/* Force-hide on tablet+ regardless of .is-open */
 @media screen and (min-width: 768px) {
     .mobile-menu,
     .mobile-menu.is-open {
         display: none !important;
     }
+}
+
+/* Inner content container — flex column, full height */
+.mobile-menu-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+    padding: 72px 16px 40px;
+}
+
+.mobile-menu-nav {
+    flex-grow: 1;
 }
 
 .mobile-menu-close {
@@ -168,9 +182,7 @@ img {
 }
 
 .mobile-menu-close:hover,
-.mobile-menu-close:focus {
-    background-color: #404bbf;
-}
+.mobile-menu-close:focus { background-color: #404bbf; }
 
 .mobile-menu-close svg {
     fill: #2E2F42;
@@ -180,9 +192,7 @@ img {
 }
 
 .mobile-menu-close:hover svg,
-.mobile-menu-close:focus svg {
-    fill: #fff;
-}
+.mobile-menu-close:focus svg { fill: #fff; }
 
 .mobile-nav-ul {
     list-style: none;
@@ -204,13 +214,12 @@ img {
 
 .mobile-nav-link.current,
 .mobile-nav-link:hover,
-.mobile-nav-link:focus {
-    color: #404bbf;
-}
+.mobile-nav-link:focus { color: #404bbf; }
 
-.mobile-menu-bottom {
-    margin-top: 48px;
-}
+.mobile-menu-bottom { margin-top: 48px; }
+
+/* <address> reset */
+.mobile-menu-address { font-style: normal; }
 
 .mobile-contact-list {
     list-style: none;
@@ -235,7 +244,7 @@ img {
     color: #434455;
 }
 
-/* Mobile menu social icons — 24×24 */
+/* Social icons in mobile menu — 24×24 */
 .mobile-social-ul {
     display: flex;
     gap: 40px;
@@ -265,7 +274,7 @@ img {
     margin: 0 auto;
 }
 
-/* Mobile 2x retina */
+/* Mobile 2x */
 @media screen and (min-resolution: 192dpi),
        screen and (min-resolution: 2dppx),
        screen and (-webkit-min-device-pixel-ratio: 2) {
@@ -278,14 +287,16 @@ img {
 
 .hero-container {
     margin: 0 auto;
-    max-width: 288px;
+    /* Mobile: narrow text block */
+    max-width: 216px;
     text-align: center;
 }
 
-/* Mobile hero heading: 36px */
+/* Mobile: 36px, bold */
 .hero-image-h1 {
     color: white;
     text-align: center;
+    font-weight: 700;
     font-size: 36px;
     line-height: 1.11;
     letter-spacing: 0.02em;
@@ -300,6 +311,7 @@ img {
     color: white;
     letter-spacing: 0.04em;
     font-weight: 500;
+    /* Mobile: 72px gap from heading */
     margin-top: 72px;
     padding: 16px 32px;
     border-radius: 4px;
@@ -308,9 +320,7 @@ img {
 }
 
 .order-button:hover,
-.order-button:focus {
-    background-color: #404BBF;
-}
+.order-button:focus { background-color: #404BBF; }
 
 /* ==================== OUR FEATURES (mobile base) ==================== */
 
@@ -323,16 +333,19 @@ img {
 /* Mobile: icon block hidden */
 .our-features-icon-div { display: none; }
 
-/* Mobile: h3 as bold large heading */
+/* Mobile: bold large heading, centred */
 .our-features-h3 {
     font-weight: 700;
     font-size: 36px;
     line-height: 1.11;
     letter-spacing: 0.02em;
+    text-align: center;
     margin-bottom: 8px;
 }
 
+/* Mobile: slightly heavier body text */
 .our-features-p {
+    font-weight: 500;
     font-size: 16px;
     line-height: 1.5;
     color: #434455;
@@ -457,16 +470,13 @@ img {
     border-right: 1px solid #E7E9FC;
 }
 
+/* Mobile & tablet: shadow always visible */
 .our-portfolio-container-li-div {
-    transition: box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-.our-portfolio-container-li-div:hover,
-.our-portfolio-container-li-div:focus {
     box-shadow:
-        0 2px 1px 0 rgba(46, 47, 66, 0.08),
+        0 1px 6px 0 rgba(46, 47, 66, 0.08),
         0 1px 1px 0 rgba(46, 47, 66, 0.16),
-        0 1px 6px 0 rgba(46, 47, 66, 0.08);
+        0 2px 1px 0 rgba(46, 47, 66, 0.08);
+    transition: box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .our-portfolio-container-img-div {
@@ -502,6 +512,7 @@ img {
 .footer {
     background-color: #2E2F42;
     color: #F4F4FD;
+    /* Mobile padding — same as tablet; changes only on desktop */
     padding-block: 96px;
 }
 
@@ -645,7 +656,7 @@ img {
     pointer-events: auto;
 }
 
-/* Mobile modal: 288px wide */
+/* Mobile modal */
 .modal-container {
     box-shadow:
         0 1px 1px 0 rgba(0, 0, 0, 0.14),
@@ -858,7 +869,6 @@ img {
     .header-container-link { padding-block: 24px; }
     .navigate { gap: 120px; }
 
-    /* Show desktop nav */
     .nav-ul {
         display: flex;
         gap: 40px;
@@ -896,7 +906,6 @@ img {
 
     .nav-link:active { color: #4D5AE5; }
 
-    /* Show contacts, hide burger */
     .contact {
         display: block;
         font-style: normal;
@@ -923,7 +932,7 @@ img {
 
     .burger-btn { display: none; }
 
-    /* Hero: tablet 1x image, 112px padding, 56px heading */
+    /* Hero: tablet 1x, 112px padding, 56px bold heading */
     .hero-image {
         padding-block: 112px;
         background-image:
@@ -936,12 +945,13 @@ img {
     .hero-image-h1 {
         font-size: 56px;
         line-height: 1.0714;
+        /* font-weight: 700 already set in base */
     }
 
     /* Tablet: 36px gap heading → button */
     .order-button { margin-top: 36px; }
 
-    /* Features: 2-column */
+    /* Features: 2-column, headings left-aligned on tablet */
     .our-features-container-ul {
         flex-direction: row;
         flex-wrap: wrap;
@@ -950,6 +960,11 @@ img {
 
     .our-features-container-ul-li {
         flex-basis: calc((100% - 24px) / 2);
+    }
+
+    /* On tablet h3 left-aligned (overrides mobile center) */
+    .our-features-h3 {
+        text-align: left;
     }
 
     /* Team: 2-column wrap */
@@ -970,7 +985,7 @@ img {
         height: auto;
     }
 
-    /* Portfolio: 2-column wrap */
+    /* Portfolio: 2-column wrap, shadow always visible (same as mobile base) */
     .our-portfolio-container-ul {
         flex-direction: row;
         flex-wrap: wrap;
@@ -984,9 +999,7 @@ img {
         width: auto;
     }
 
-    /* Footer: row layout */
-    .footer { padding-block: 100px; }
-
+    /* Footer: tablet row layout, padding stays 96px (same as mobile) */
     .footer-subcontainer {
         flex-direction: row;
         flex-wrap: wrap;
@@ -1018,14 +1031,14 @@ img {
 
     .footer-form-input { width: 264px; }
 
-    /* Modal: full-width on tablet+ */
+    /* Modal: wider on tablet+ */
     .modal-container {
         width: 408px;
         padding: 72px 24px 24px;
     }
 }
 
-/* Tablet 2x retina hero */
+/* Tablet 2x retina */
 @media screen and (min-width: 768px) and (min-resolution: 192dpi),
        screen and (min-width: 768px) and (min-resolution: 2dppx),
        screen and (min-width: 768px) and (-webkit-min-device-pixel-ratio: 2) {
@@ -1061,7 +1074,7 @@ img {
         letter-spacing: 0.02em;
     }
 
-    /* Hero: desktop 1x image, 188px padding */
+    /* Hero: desktop 1x, 188px padding */
     .hero-image {
         padding-block: 188px;
         background-image:
@@ -1069,10 +1082,10 @@ img {
             url(../images/hero-img.jpg);
     }
 
-    /* Desktop: standard 48px gap heading → button */
+    /* Desktop: standard 48px gap */
     .order-button { margin-top: 48px; }
 
-    /* Features: 4-column, icon boxes visible */
+    /* Features: 4-column, icon boxes, headings left-aligned */
     .our-features-icon-div {
         display: flex;
         border: 1px solid #8e8f99;
@@ -1088,7 +1101,10 @@ img {
         font-weight: 500;
         font-size: 20px;
         line-height: 1.2;
+        text-align: left;
     }
+
+    .our-features-p { font-weight: 400; }
 
     .our-features-container-ul {
         flex-wrap: nowrap;
@@ -1105,23 +1121,36 @@ img {
         gap: 24px;
     }
 
-    .our-team-li {
-        flex-basis: calc((100% - 3 * 24px) / 4);
-    }
+    .our-team-li { flex-basis: calc((100% - 3 * 24px) / 4); }
 
     .our-team-li-img {
         width: 264px;
         height: 260px;
     }
 
-    /* Portfolio: 3-column */
+    /* Portfolio: 3-column, shadow ONLY on hover */
     .our-portfolio-container-ul { gap: 48px 24px; }
 
     .our-portfolio-container-ul-li {
         flex-basis: calc((100% - 48px) / 3);
     }
 
-    /* Footer: single row */
+    /* Desktop: remove always-on shadow, show only on hover */
+    .our-portfolio-container-li-div {
+        box-shadow: none;
+    }
+
+    .our-portfolio-container-li-div:hover,
+    .our-portfolio-container-li-div:focus {
+        box-shadow:
+            0 2px 1px 0 rgba(46, 47, 66, 0.08),
+            0 1px 1px 0 rgba(46, 47, 66, 0.16),
+            0 1px 6px 0 rgba(46, 47, 66, 0.08);
+    }
+
+    /* Footer: 100px padding on desktop only */
+    .footer { padding-block: 100px; }
+
     .footer-subcontainer {
         flex-wrap: nowrap;
         gap: 0;
@@ -1131,7 +1160,7 @@ img {
     .container-footer-social-div { margin-right: 80px; }
 }
 
-/* Desktop 2x retina hero */
+/* Desktop 2x retina */
 @media screen and (min-width: 1158px) and (min-resolution: 192dpi),
        screen and (min-width: 1158px) and (min-resolution: 2dppx),
        screen and (min-width: 1158px) and (-webkit-min-device-pixel-ratio: 2) {

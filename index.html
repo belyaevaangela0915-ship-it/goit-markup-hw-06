@@ -371,32 +371,43 @@
 
     <!-- ==================== MOBILE MENU (after footer, before </body>) ==================== -->
     <div class="mobile-menu js-mobile-menu">
-      <button type="button" class="mobile-menu-close js-close-menu" aria-label="Close mobile menu">
-        <svg width="8" height="8" viewBox="0 0 8 8" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <path d="M1 1L7 7M7 1L1 7" stroke="#2E2F42" stroke-width="1.5" stroke-linecap="round"/>
-        </svg>
-      </button>
+      <!-- Inner content container -->
+      <div class="mobile-menu-container">
 
-      <ul class="mobile-nav-ul">
-        <li><a href="./index.html" class="mobile-nav-link current">Studio</a></li>
-        <li><a href="./index.html" class="mobile-nav-link">Portfolio</a></li>
-        <li><a href="./index.html" class="mobile-nav-link">Contacts</a></li>
-      </ul>
+        <button type="button" class="mobile-menu-close js-close-menu" aria-label="Close mobile menu">
+          <svg width="8" height="8" viewBox="0 0 8 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M1 1L7 7M7 1L1 7" stroke="#2E2F42" stroke-width="1.5" stroke-linecap="round"/>
+          </svg>
+        </button>
 
-      <div class="mobile-menu-bottom">
-        <ul class="mobile-contact-list">
-          <li><a href="tel:+110001111111" class="mobile-contact-phone">+11 (000) 111-11-11</a></li>
-          <li><a href="mailto:info@devstudio.com" class="mobile-contact-email">info@devstudio.com</a></li>
-        </ul>
+        <!-- Nav wrapped in <nav> -->
+        <nav class="mobile-menu-nav">
+          <ul class="mobile-nav-ul">
+            <li><a href="./index.html" class="mobile-nav-link current">Studio</a></li>
+            <li><a href="./index.html" class="mobile-nav-link">Portfolio</a></li>
+            <li><a href="./index.html" class="mobile-nav-link">Contacts</a></li>
+          </ul>
+        </nav>
 
-        <!-- Social icons 24×24 in mobile menu -->
-        <ul class="mobile-social-ul">
-          <li><a href="https://www.instagram.com/" class="linked-icon-bg" target="_blank"><svg class="linked-icon-svg" width="24" height="24"><use href="./images/icons.svg#instagram"></use></svg></a></li>
-          <li><a href="https://twitter.com/" class="linked-icon-bg" target="_blank"><svg class="linked-icon-svg" width="24" height="24"><use href="./images/icons.svg#twitter"></use></svg></a></li>
-          <li><a href="https://www.facebook.com/" class="linked-icon-bg" target="_blank"><svg class="linked-icon-svg" width="24" height="24"><use href="./images/icons.svg#facebook"></use></svg></a></li>
-          <li><a href="https://www.linkedin.com/" class="linked-icon-bg" target="_blank"><svg class="linked-icon-svg" width="24" height="24"><use href="./images/icons.svg#linkedin"></use></svg></a></li>
-        </ul>
-      </div>
+        <!-- Bottom: contacts as <address> + socials -->
+        <div class="mobile-menu-bottom">
+          <address class="mobile-menu-address">
+            <ul class="mobile-contact-list">
+              <li><a href="tel:+110001111111" class="mobile-contact-phone">+11 (000) 111-11-11</a></li>
+              <li><a href="mailto:info@devstudio.com" class="mobile-contact-email">info@devstudio.com</a></li>
+            </ul>
+          </address>
+
+          <!-- Social icons 24×24 -->
+          <ul class="mobile-social-ul">
+            <li><a href="https://www.instagram.com/" class="linked-icon-bg" target="_blank"><svg class="linked-icon-svg" width="24" height="24"><use href="./images/icons.svg#instagram"></use></svg></a></li>
+            <li><a href="https://twitter.com/" class="linked-icon-bg" target="_blank"><svg class="linked-icon-svg" width="24" height="24"><use href="./images/icons.svg#twitter"></use></svg></a></li>
+            <li><a href="https://www.facebook.com/" class="linked-icon-bg" target="_blank"><svg class="linked-icon-svg" width="24" height="24"><use href="./images/icons.svg#facebook"></use></svg></a></li>
+            <li><a href="https://www.linkedin.com/" class="linked-icon-bg" target="_blank"><svg class="linked-icon-svg" width="24" height="24"><use href="./images/icons.svg#linkedin"></use></svg></a></li>
+          </ul>
+        </div>
+
+      </div><!-- /mobile-menu-container -->
     </div>
 
     <script>
