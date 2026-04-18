@@ -231,10 +231,11 @@ img {
 }
 
 .mobile-contact-phone {
-    font-weight: 700;
-    font-size: 36px;
-    line-height: 1.11;
-    color: #4D5AE5;
+font-weight: 500;
+font-size: 20px;
+line-height: 1.2;
+letter-spacing: 0.02em;
+color: #4d5ae5;
 }
 
 .mobile-contact-email {
@@ -937,7 +938,6 @@ img {
         padding-block: 112px;
         background-image:
             linear-gradient(to bottom, rgba(46, 47, 66, 0.7), rgba(46, 47, 66, 0.7)),
-            url(../images/hero-img-tablet.jpg);
     }
 
     .hero-container { max-width: 496px; }
