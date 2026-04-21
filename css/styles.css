@@ -231,9 +231,10 @@ img {
 }
 
 .mobile-contact-phone {
-    font-weight: 700;
-    font-size: 36px;
-    line-height: 1.11;
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 1.2;
+    letter-spacing: 0.02em;
     color: #4D5AE5;
 }
 
@@ -259,10 +260,11 @@ img {
 }
 
 /* ==================== HERO (mobile base) ==================== */
-
+/* Hero does NOT use .section — it is its own sole source of vertical padding */
 .hero-image {
     background-color: #2E2F42;
-    padding-block: 72px;
+    padding-top: 72px;
+    padding-bottom: 72px;
     overflow: hidden;
     background-image:
         linear-gradient(to bottom, rgba(46, 47, 66, 0.7), rgba(46, 47, 66, 0.7)),
@@ -323,6 +325,12 @@ img {
 .order-button:focus { background-color: #404BBF; }
 
 /* ==================== OUR FEATURES (mobile base) ==================== */
+
+/* Explicit padding for features on mobile — does not rely on .section */
+.our-features {
+    padding-top: 96px;
+    padding-bottom: 96px;
+}
 
 .our-features-container-ul {
     display: flex;
@@ -934,7 +942,8 @@ img {
 
     /* Hero: tablet 1x, 112px padding, 56px bold heading */
     .hero-image {
-        padding-block: 112px;
+        padding-top: 112px;
+        padding-bottom: 112px;
         background-image:
             linear-gradient(to bottom, rgba(46, 47, 66, 0.7), rgba(46, 47, 66, 0.7)),
             url(../images/hero-img-tablet.jpg);
@@ -950,6 +959,12 @@ img {
 
     /* Tablet: 36px gap heading → button */
     .order-button { margin-top: 36px; }
+
+    /* Features: explicit padding for tablet (same as .section on tablet) */
+    .our-features {
+        padding-top: 96px;
+        padding-bottom: 96px;
+    }
 
     /* Features: 2-column, headings left-aligned on tablet */
     .our-features-container-ul {
@@ -1076,7 +1091,8 @@ img {
 
     /* Hero: desktop 1x, 188px padding */
     .hero-image {
-        padding-block: 188px;
+        padding-top: 188px;
+        padding-bottom: 188px;
         background-image:
             linear-gradient(to bottom, rgba(46, 47, 66, 0.7), rgba(46, 47, 66, 0.7)),
             url(../images/hero-img.jpg);
@@ -1084,6 +1100,12 @@ img {
 
     /* Desktop: standard 48px gap */
     .order-button { margin-top: 48px; }
+
+    /* Features: explicit padding for desktop */
+    .our-features {
+        padding-top: 120px;
+        padding-bottom: 120px;
+    }
 
     /* Features: 4-column, icon boxes, headings left-aligned */
     .our-features-icon-div {
