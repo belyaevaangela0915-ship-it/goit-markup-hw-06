@@ -982,7 +982,7 @@ img {
         text-align: left;
     }
 
-    /* Team: 2-column wrap */
+    /* Team: 2-column, fixed ~264px cards, centred */
     .our-team-list {
         flex-direction: row;
         flex-wrap: wrap;
@@ -991,13 +991,13 @@ img {
     }
 
     .our-team-li {
-        flex-basis: calc((100% - 24px) / 2);
-        width: auto;
+        flex-basis: 264px;
+        width: 264px;
     }
 
     .our-team-li-img {
-        width: 100%;
-        height: auto;
+        width: 264px;
+        height: 260px;
     }
 
     /* Portfolio: 2-column wrap, shadow always visible (same as mobile base) */
@@ -1022,7 +1022,9 @@ img {
         gap: 72px 24px;
     }
 
+    /* First row: logo-text + social, fixed widths */
     .container-footer-text {
+        flex-basis: 264px;
         max-width: 264px;
         margin-right: 0;
         text-align: left;
@@ -1031,13 +1033,18 @@ img {
     .container-footer-text .footer-p { text-align: left; }
 
     .container-footer-social-div {
+        flex-basis: 208px;
         max-width: 208px;
         text-align: left;
     }
 
     .footer-linked-icons-ul { justify-content: flex-start; }
 
-    .container-form { text-align: left; }
+    /* Subscribe block: full row on tablet (forces second row) */
+    .container-form {
+        flex-basis: 100%;
+        text-align: left;
+    }
 
     .footer-form {
         flex-direction: row;
@@ -1178,8 +1185,20 @@ img {
         gap: 0;
     }
 
-    .container-footer-text { margin-right: 120px; }
-    .container-footer-social-div { margin-right: 80px; }
+    .container-footer-text {
+        flex-basis: auto;
+        margin-right: 120px;
+    }
+
+    .container-footer-social-div {
+        flex-basis: auto;
+        margin-right: 80px;
+    }
+
+    /* Subscribe block: auto width on desktop (single row) */
+    .container-form {
+        flex-basis: auto;
+    }
 }
 
 /* Desktop 2x retina */
